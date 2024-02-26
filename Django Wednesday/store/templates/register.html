@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block heading%} Register here {% endblock %}
+{% block header_tagline%}This is the register page{% endblock %}
+
+{% block content%}
+<form method="POST", action="{% url 'register' %}">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <button type="submit" class="btn btn-secondary">Register</button>
+</form>
+{% endblock %}
